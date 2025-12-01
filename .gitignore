@@ -1,52 +1,12 @@
-# ==========================================================================
-# APEX_TECHNICAL_AUTHORITY Standard .gitignore
-# Project: VideoSum-AI-Summarization-React-Native-Platform (React Native/Expo/JS)
-# Standard: Zero-Defect, Future-Proof (2026 Standards)
-# ==========================================================================
-
-# === NODE & NPM/Yarn ===
-node_modules
-.pnp
-.pnp.js
-
-# === Build & Compilation ===
-dist
-build
-.next
-.turbo
-
-# === React Native / Expo Cache & Artifacts ===
-*.swp
-*.swo
-*.DS_Store
-
-# Expo
-.expo/
-exp.log
-
-# React Native
-/android/build
-/ios/build
-/ios/Pods/
-
-# == IDE & OS ==
-.vscode/
-.idea/
+node_modules/
+dist/
+build/
+.next/
+.turbo/
+.env
+.DS_Store
 *.log
 *.tmp
-
-# === Testing & Coverage ===
-coverage
-.nyc_output
-playwright-report
-
-# === Environment & Secrets ===
-.env
-.env.local
-secrets.json
-
-# === TypeScript ===
-*.tsbuildinfo
-
-# === Biome/Ruff Cache ===
-.biome.lock
+*.swp
+.yarn/
+.pnp.*
