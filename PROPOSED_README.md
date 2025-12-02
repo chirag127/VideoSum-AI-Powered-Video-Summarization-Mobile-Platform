@@ -1,184 +1,116 @@
-# VideoSum-AI-Powered-Video-Summarization-Mobile-Platform
+# VideoSum: AI-Powered Video Summarizer Mobile App
 
-<!-- Hero Banner/Logo Placeholder - Replace with your project's official branding -->
-![VideoSum Hero Banner](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/raw/main/assets/video-sum-hero-banner.png)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App/ci.yml?style=flat-square)](https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App/actions/workflows/ci.yml)
+[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App?style=flat-square)](https://app.codecov.io/gh/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App)
+[![Tech Stack](https://img.shields.io/badge/Tech%20Stack-React%20Native%20%7C%20Expo%20%7C%20TypeScript-blue.svg?style=flat-square)](https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App)
+[![Lint/Format](https://img.shields.io/badge/Lint%2FFormat-Biome-green.svg?style=flat-square)](https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![GitHub Stars](https://img.shields.io/github/stars/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App?style=flat-square&logo=github)](https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App/stargazers)
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/ci.yml?branch=main&style=flat-square)](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/actions/workflows/ci.yml)
-[![Code Coverage](https://img.shields.io/codecov/c/github/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform?style=flat-square&token=YOUR_CODECOV_TOKEN)](https://codecov.io/gh/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform)
-[![Tech Stack](https://img.shields.io/badge/Stack-React%20Native%20%7C%20Expo%20%7C%20TypeScript%20%7C%20AI-blueviolet?style=flat-square)](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform)
-[![Linting & Formatting](https://img.shields.io/badge/Code%20Quality-Biome-informational?style=flat-square)](https://biomejs.dev/)
-[![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey?style=flat-square)](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/blob/main/LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform?style=flat-square&colorA=white&colorB=orange&logo=github)](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/stargazers)
 
-**Star ⭐ this Repo!** Your support helps us deliver cutting-edge AI-powered mobile solutions.
+⭐ Star this Repo
 
-## 🚀 The Definitive AI Video Summarization Mobile Platform
+---
 
-VideoSum is a groundbreaking cross-platform mobile application engineered with React Native and Expo, leveraging advanced AI to instantly distill lengthy video content into concise, actionable summaries. Designed for both iOS and Android, it empowers professionals and students to consume information faster, enhance learning efficiency, and boost productivity by extracting key insights from videos with unparalleled speed and accuracy.
+## BLUF
+VideoSum is an AI-powered mobile application (iOS/Android) that transforms lengthy videos into concise, actionable summaries. Boost your productivity and quickly extract the core insights from any video, anywhere.
 
-## 🏗️ Architecture Overview
-
-This project adheres to the **Feature-Sliced Design (FSD)** architecture, promoting a scalable, maintainable, and highly modular codebase. The mobile client (React Native/Expo) focuses on a clean UI/UX and efficient interaction with a robust backend (not part of this repo, but conceptually integrated) responsible for AI processing.
+## Architecture
 
 mermaid
-graph TD
-    A[Mobile Client: VideoSum App] --> B(User Interaction: Upload/Link Video)
-    B --> C{API Gateway/Backend Service}
-    C --> D[Video Processing & AI Summarization Engine]
-    D --> E[Summary Storage & Retrieval]
-    E --> C
-    C --> F(Display Summaries on Mobile App)
+graph LR
+  subgraph Mobile App
+    A[React Native & Expo] --> B(UI Components);
+    A --> C(API Integration);
+    A --> D(State Management);
+  end
+  subgraph Backend (AI)
+    C --> E(Video Processing);
+    E --> F(AI Summarization);
+    F --> G(Summary Generation);
+  end
+  B --> H(User Interface);
+  G --> C;
+  H --> A;
 
-    subgraph Mobile App (React Native/Expo)
-        G[UI/UX Layer] --> H[Feature Modules (FSD)]
-        H --> I[State Management (MobX/Zustand)]
-        I --> J[API Service Layer]
-    end
-
-    subgraph Backend Services (Conceptual - External to this repo)
-        K[Video Ingestion Service]
-        L[AI/ML Summarization Microservice]
-        M[Database & Storage]
-    end
-
-    J --> K
-    J --> L
-    J --> M
+  style A fill:#f9f,stroke:#333,stroke-width:2px
+  style B fill:#ccf,stroke:#333,stroke-width:2px
+  style C fill:#ccf,stroke:#333,stroke-width:2px
+  style D fill:#ccf,stroke:#333,stroke-width:2px
+  style E fill:#ccf,stroke:#333,stroke-width:2px
+  style F fill:#ccf,stroke:#333,stroke-width:2px
+  style G fill:#ccf,stroke:#333,stroke-width:2px
+  style H fill:#ccf,stroke:#333,stroke-width:2px
 
 
-## 📋 Table of Contents
 
-*   [🚀 The Definitive AI Video Summarization Mobile Platform](#%F0%9F%9A%80-the-definitive-ai-video-summarization-mobile-platform)
-*   [🏗️ Architecture Overview](#%F0%9F%8F%A3%EF%B8%8F-architecture-overview)
-*   [📋 Table of Contents](#%F0%9F%93%8B-table-of-contents)
-*   [🤖 AI Agent Directives (System Level)](#%F0%9F%A4%96-ai-agent-directives-system-level)
-*   [🛠️ Development Standards](#%F0%9F%9B%A0%EF%B8%8F-development-standards)
-    *   [Prerequisites](#prerequisites)
-    *   [Installation](#installation)
-    *   [Available Scripts](#available-scripts)
-    *   [Core Principles](#core-principles)
-*   [🤝 Contributing](#%F0%9F%A4%9D-contributing)
-*   [📄 License](#%F0%9F%93%84-license)
+## Table of Contents
 
-## 🤖 AI Agent Directives (System Level)
+-   [BLUF](#bluf)
+-   [Architecture](#architecture)
+-   [AI Agent Directives](#ai-agent-directives)
+-   [Development Standards](#development-standards)
+
+---
 
 <details>
-<summary>⚡ ELITE ARCHITECT MANDATE: Click to reveal critical AI Agent Directives</summary>
+<summary>🤖 AI AGENT DIRECTIVES</summary>
 
-# SYSTEM: APEX TECHNICAL AUTHORITY & ELITE ARCHITECT (DECEMBER 2025 EDITION)
+**Tech Stack:**
 
-## 1. IDENTITY & PRIME DIRECTIVE
-**Role:** You are a Senior Principal Software Architect and Master Technical Copywriter with **40+ years of elite industry experience**. You operate with absolute precision, enforcing FAANG-level standards and the wisdom of "Managing the Unmanageable."
-**Context:** Current Date is **December 2025**. You are building for the 2026 standard.
-**Output Standard:** Deliver **EXECUTION-ONLY** results. No plans, no "reporting"—only executed code, updated docs, and applied fixes.
-**Philosophy:** "Zero-Defect, High-Velocity, Future-Proof."
+*   **Language:** JavaScript/TypeScript
+*   **Framework:** React Native
+*   **Environment:** Expo
+*   **State Management:** (To be defined - e.g., Zustand, Redux)
+*   **Styling:** TailwindCSS or similar
+*   **Linting/Formatting:** Biome (speed) & ESLint
+*   **Testing:** Vitest (Unit), Playwright (E2E)
+*   **CI/CD:** GitHub Actions
+*   **AI Integration:**
+    *   OpenAI API (or similar) for video summarization.
+    *   Prioritize modular design, clear API contracts, and robust error handling.
 
----
+**Architectural Patterns:**
 
-## 2. INPUT PROCESSING & COGNITION
-*   **SPEECH-TO-TEXT INTERPRETATION PROTOCOL:**
-    *   **Context:** User inputs may contain phonetic errors (homophones, typos).
-    *   **Semantic Correction:** **STRICTLY FORBIDDEN** from executing literal typos. You must **INFER** technical intent based on the project context.
-    *   **Logic Anchor:** Treat the `README.md` as the **Single Source of Truth (SSOT)**.
-*   **MANDATORY MCP INSTRUMENTATION:**
-    *   **No Guessing:** Do not hallucinate APIs.
-    *   **Research First:** Use `linkup`/`brave` to search for **December 2025 Industry Standards**, **Security Threats**, and **2026 UI Trends**.
-    *   **Validation:** Use `docfork` to verify *every* external API signature.
-    *   **Reasoning:** Engage `clear-thought-two` to architect complex flows *before* writing code.
+*   Feature-Sliced Design (FSD) for component organization.
+*   Clean Architecture principles for separation of concerns.
+*   SOLID principles.
+*   DRY (Don't Repeat Yourself).
+*   YAGNI (You Ain't Gonna Need It).
 
----
+**Verification Commands:**
 
-## 3. CONTEXT-AWARE APEX TECH STACKS (LATE 2025 STANDARDS)
-**Directives:** This project, `VideoSum-AI-Powered-Video-Summarization-Mobile-Platform`, is a cutting-edge cross-platform mobile application.
-
-*   **PRIMARY SCENARIO: MOBILE / APP (React Native / Expo)**
-    *   **Stack:** This project leverages **React Native (Expo SDK 50+**) with **TypeScript (Strict Mode)** for robust type safety. State management is handled with **MobX** or **Zustand**. Native builds and CI/CD are streamlined using **Expo Application Services (EAS)**.
-    *   **Architecture:** Adheres to the **Feature-Sliced Design (FSD)**, ensuring a highly modular, scalable, and maintainable codebase. Components are organized by feature slices, promoting clear boundaries and testability.
-    *   **Lint/Format:** **Biome** is employed for ultra-fast linting and formatting, ensuring consistent code quality and adherence to best practices across the project.
-    *   **Testing:** Comprehensive testing includes **Jest** for unit and integration tests of components and logic, and **Detox** for robust end-to-end (E2E) testing on actual devices or simulators, verifying the user experience flows.
-    *   **AI Integration:** The mobile client integrates seamlessly with **external AI summarization services**. It handles secure API communication, efficient data transfer (video uploads/links), processing of summarization requests, and optimized display of generated insights. Focus on resilient error handling, user feedback mechanisms, and performance for large video assets.
-    *   **Performance:** Prioritize optimal rendering performance, minimal bundle size, and efficient resource utilization critical for mobile applications. Leverage Hermes engine, native modules where necessary, and Expo optimizations.
-
-*   **SECONDARY SCENARIO A: WEB / APP / EXTENSION (TypeScript) - *Not applicable for this project's primary function. Reference only for potential future web-based extensions or admin dashboards.***
-    *   **Stack:** TypeScript 6.x (Strict), Vite 7 (Rolldown), Tauri v2.x (Native), WXT (Extensions).
-    *   **State:** Signals (Standardized).
+*   `npm install`: Installs all dependencies.
+*   `npm run lint`: Runs Biome linter and formatter.
+*   `npm run test`: Runs unit tests.
+*   `npm run e2e`: Runs end-to-end tests.
+*   `npm run build`: Builds the application.
+*   `npm run start`: Runs the Expo development server.
 
 </details>
 
-## 🛠️ Development Standards
+---
 
-### Prerequisites
+## Development Standards
 
-Before you begin, ensure you have the following installed:
+1.  **Setup:**
+    *   `git clone https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App.git`
+    *   `cd VideoSum-AI-Video-Summarizer-Mobile-App`
+    *   `npm install`
 
-*   **Node.js** (LTS version, e.g., v20.x) & **npm** or **yarn** or **uv** (recommended for package management)
-*   **Expo CLI**: `npm install -g expo-cli`
-*   **Git**
+2.  **Scripts:**
 
-### Installation
+    | Script         | Description                                        | 
+    | -------------- | -------------------------------------------------- | 
+    | `npm run lint` | Runs the Biome linter and formatter.                  | 
+    | `npm run test` | Runs unit tests using Vitest.                       | 
+    | `npm run e2e`  | Runs end-to-end tests using Playwright.            | 
+    | `npm run start`| Starts the Expo development server.                  | 
+    | `npm run build`| Builds the React Native application for deployment. | 
 
-To get the project up and running locally:
+3.  **Principles:**
 
-1.  **Clone the repository:**
-    bash
-    git clone https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform.git
-    cd VideoSum-AI-Powered-Video-Summarization-Mobile-Platform
-    
+    *   **SOLID:** Adhere to SOLID principles for maintainable code.
+    *   **DRY:** Avoid code duplication.
+    *   **YAGNI:** Implement features only when required.
 
-2.  **Install dependencies using uv (recommended):**
-    bash
-    uv pip install -r requirements.txt # If there's a Python backend component
-    uv sync
-    
-    *Alternatively, using npm/yarn:*
-    bash
-    npm install
-    # or
-    yarn install
-    
-
-3.  **Start the Expo development server:**
-    bash
-    npm start
-    # or
-    yarn start
-    # or
-    expo start
-    
-    This will open a new tab in your browser with the Expo DevTools. You can then scan the QR code with your mobile device using the Expo Go app or run on an iOS/Android simulator/emulator.
-
-### Available Scripts
-
-In the project directory, you can run:
-
-| Script          | Description                                                    |
-| :-------------- | :------------------------------------------------------------- |
-| `npm start`     | Starts the Expo development server.                            |
-| `npm run android` | Runs the app on a connected Android device or emulator.        |
-| `npm run ios`   | Runs the app on a connected iOS simulator.                     |
-| `npm run web`   | Runs the app in web browser (if web target is enabled).        |
-| `npm test`      | Runs unit and integration tests with Jest.                     |
-| `npm run lint`  | Lints the codebase with Biome.                                 |
-| `npm run format`| Formats the codebase with Biome.                               |
-| `npm run build:android` | Builds a production Android app (.apk/.aab) via EAS.   |
-| `npm run build:ios`     | Builds a production iOS app (.ipa) via EAS.            |
-| `npm run eas:configure` | Configures `eas.json` for EAS builds.                  |
-| `npm run eas:login`     | Logs into Expo Application Services.                   |
-
-### Core Principles
-
-Our development philosophy is rooted in foundational software engineering principles to ensure maintainability, scalability, and robustness:
-
-*   **SOLID Principles:** Applying Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion throughout the codebase.
-*   **DRY (Don't Repeat Yourself):** Eliminating redundancy and promoting reusable components and utilities.
-*   **YAGNI (You Ain't Gonna Need It):** Focusing on immediate requirements and avoiding premature optimization or over-engineering.
-*   **Clean Code:** Prioritizing readability, understandability, and simplicity in all code contributions.
-*   **Test-Driven Development (TDD):** Writing tests before code to drive design and ensure correctness.
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Please refer to our [Contributing Guidelines](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/blob/main/.github/CONTRIBUTING.md) for details on how to get started, report bugs, and propose features.
-
-## 📄 License
-
-This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License. See the [LICENSE](https://github.com/chirag127/VideoSum-AI-Powered-Video-Summarization-Mobile-Platform/blob/main/LICENSE) file for more details.
