@@ -1,48 +1,35 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: '[BUG] - Short description of the bug'
-labels: bug
-assignees: ''
+# Bug Report
 
----
+## Please provide as much detail as possible about the bug.
 
-Thank you for taking the time to report a bug! To ensure we can effectively address your issue, please provide the following information:
+### 1. What is the expected behavior?
 
-## Describe the bug
+Describe what you expected to happen.
 
-A clear and concise description of what the bug is.
+### 2. What is the actual behavior?
 
-## Expected behavior
+Describe what actually happened. Please include any error messages or stack traces.
 
-A clear and concise description of what you expected to happen.
+### 3. Steps to reproduce
 
-## Steps to reproduce
+Provide a clear, step-by-step list of instructions that will lead to the bug. If possible, include the exact video(s) or input that triggered the bug.
 
-List the steps to reproduce the behavior:
+1. Go to `...`
+2. Click `...`
+3. Observe `...`
 
-1.  Go to '...'
-2.  Click on '....'
-3.  Scroll down to '....'
-4.  See error
+### 4. Environment
 
-## Screenshots
+*   **App Version:** (e.g., `v1.2.3` or specific commit hash)
+*   **Device:** (e.g., iPhone 15 Pro, Samsung Galaxy S24)
+*   **OS:** (e.g., iOS 17.2, Android 14)
+*   **Expo Go / Development Build:** (Specify if using Expo Go or a development build)
 
-If applicable, add screenshots to help explain your problem.
+### 5. Additional Information
 
-## Environment
+Any other context about the problem. Screenshots, recordings, or logs are highly appreciated.
 
-*   Mobile Platform (iOS, Android):
-*   React Native Version:
-*   Expo Version:
-*   VideoSum App Version:
-*   Device (e.g., iPhone 13, Samsung Galaxy S21):
-*   Operating System version:
+--- 
 
-## Additional context
-
-Add any other context about the problem here.
-
-## Logs
-
-Please provide any relevant logs that might help diagnose the issue. You can usually find these using `adb logcat` for Android or Xcode's console for iOS.
+**Repository:** `https://github.com/chirag127/VideoSum-AI-Video-Summarizer-Mobile-App`
+**AI Agent Directives:** (See `AGENTS.md` for details on architectural principles, tech stack, and verification commands.)
