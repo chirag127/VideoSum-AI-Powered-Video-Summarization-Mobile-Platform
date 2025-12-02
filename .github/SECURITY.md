@@ -1,47 +1,30 @@
-# Security Policy for VideoSum-AI-Powered-Video-Summarization-Mobile-Platform
+# Security Policy
 
-As the Apex Technical Authority, security is a foundational, non-negotiable aspect of this mobile platform. We operate under the principle of **Security by Design** and adhere to the latest industry best practices for cross-platform mobile applications interacting with backend AI services.
+## Supported Versions
 
-## 1. Supported Versions
+We are committed to the security of our users and strive to address all security vulnerabilities promptly. We actively maintain and support the latest stable release of the **VideoSum-AI-Video-Summarizer-Mobile-App**. Please ensure you are using the most recent version to benefit from the latest security patches.
 
-This project prioritizes security patching for actively maintained versions of React Native/Expo and the underlying TypeScript tooling.
+## Reporting a Vulnerability
 
-| Version | Status | Support Updates |
-| :--- | :--- | :--- |
-| Latest Stable | Supported | Critical & High Severity Fixes |
-| Previous Stable | Maintenance | Critical Severity Fixes Only |
-| Older Versions | Unsupported | None |
+We encourage you to report any security vulnerabilities you discover. We value the security research community and will work with researchers to understand and address issues. Please follow these guidelines:
 
-## 2. Reporting Vulnerabilities
+1.  **Do not disclose the vulnerability publicly.** Wait for the issue to be fixed and a public announcement to be made.
+2.  **Report privately:** Please send your vulnerability report to `chirag.codes@example.com`. Include as much information as possible, such as:
+    *   The affected product and version.
+    *   A detailed description of the vulnerability.
+    *   Steps to reproduce the vulnerability.
+    *   Proof-of-concept code (if applicable).
+    *   Your suggested mitigation or fix.
+3.  **Acknowledgement:** We will acknowledge receipt of your report within **3 business days**. We will provide an estimated timeline for resolution if the vulnerability is confirmed.
+4.  **Remediation:** Once a fix is developed, we will work to release it as a new stable version and will then coordinate with you on the public disclosure.
 
-We value proactive security reporting. If you discover a vulnerability in `VideoSum-AI-Powered-Video-Summarization-Mobile-Platform`, please follow these steps immediately:
+## Responsible Disclosure Timeline
 
-1.  **DO NOT** create a public issue or commit a fix before notifying the maintainers.
-2.  Email the dedicated security channel: `security+videosum@users.noreply.github.com`. Please use clear subject lines such as `[SECURITY REPORT] VideoSum Vulnerability`.
-3.  Include detailed, step-by-step instructions to reproduce the vulnerability, the affected component (e.g., Expo configuration, native module linkage, API handling), and the potential impact.
-4.  We will acknowledge receipt within 48 hours.
+We aim to adhere to the following timeline:
 
-## 3. Security Auditing and Practices
+*   **Day 0:** Vulnerability reported.
+*   **Day 3:** Acknowledgement of receipt.
+*   **Day 7-30:** Vulnerability assessment and development of a fix.
+*   **Day 30-60:** Release of a patched version, followed by coordinated public disclosure.
 
-### A. Mobile Application Security (React Native/Expo)
-
-*   **Dependency Scanning:** Continuous scanning of the dependency tree using tools integrated into our CI pipeline (`.github/workflows/ci.yml`) to detect known CVEs in JavaScript/TypeScript packages.
-*   **Sensitive Data Handling:** All locally stored sensitive data (e.g., API keys, user tokens) must be managed via secure storage solutions appropriate for iOS (Keychain) and Android (Keystore), typically abstracted through specialized React Native libraries.
-*   **Insecure Data Transmission:** All communication with the summarization backend API **MUST** occur over TLS 1.3+. We strictly forbid non-HTTPS communication.
-
-### B. Backend/AI Service Interaction
-
-*   **API Key Management:** Production API keys for external AI services (e.g., OpenAI, Gemini) are **NEVER** hardcoded in the mobile client. They are managed server-side (proxied) or securely injected at build time only for non-sensitive public keys.
-*   **Input Sanitization:** All user-submitted data intended for backend processing (e.g., video URLs) undergoes rigorous server-side sanitization to prevent injection attacks against the summarization pipeline.
-
-### C. Supply Chain Security (CI/CD)
-
-Our Continuous Integration process (`.github/workflows/ci.yml`) enforces the following:
-
-1.  **Automated Checks:** Biome formatting and linting checks must pass (Zero Errors).
-2.  **Testing Threshold:** Code Coverage must remain above **85%** (verified via Codecov badge).
-3.  **Signed Commits:** For critical branches, signed commits are highly encouraged to ensure author authenticity.
-
-## 4. Responsible Disclosure Policy
-
-We commit to resolving security issues promptly based on severity. We will maintain transparency throughout the remediation process, communicating updates only through the established private channels until a fix is deployed to production and appropriate public advisories are issued. Any external researcher adhering to this policy will be publicly acknowledged upon resolution (if they desire) in the project's release notes.
+*This timeline is a guideline and may be adjusted based on the complexity and severity of the vulnerability.*
